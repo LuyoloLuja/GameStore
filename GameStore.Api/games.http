@@ -1,7 +1,7 @@
 GET http://localhost:5160/games
 
 ###
-GET http://localhost:5160/games/4
+GET http://localhost:5160/games/1
 
 ###
 POST http://localhost:5160/games
@@ -15,13 +15,13 @@ Content-Type: application/json
 }
 
 ###
-PUT http://localhost:5160/games/5
+PUT http://localhost:5160/games/2
 Content-Type: application/json
 
 {
-    "name": "Street Fighter II",
-    "genre": "Fighting",
-    "price": 9.99,
+    "name": "Street Fighter II Turbo",
+    "genreId": 1,
+    "price": 19.99,
     "releaseDate": "1991-02-01"
 }
 
