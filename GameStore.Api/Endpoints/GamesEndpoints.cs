@@ -25,7 +25,6 @@ public static class GamesEndpoints
         group.MapGet("/{id}", async (int id, GameStoreContext dbContext) => 
         {
             Game? game = await dbContext.Games.FindAsync(id);
-
             return game is null ? Results.NotFound() : Results.Ok(game.ToGameDetailsDto());
         })
         .WithName(GetGameEndPointName);
@@ -54,7 +53,6 @@ public static class GamesEndpoints
             dbContext.Entry(existingGame)
                     .CurrentValues
                     .SetValues(updatedGame.ToEntity(id));
-
             await dbContext.SaveChangesAsync(); 
 
             return Results.NoContent();
